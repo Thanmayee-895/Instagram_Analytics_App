@@ -14,7 +14,7 @@ async function startAnalysis() {
     const user = document.getElementById('usernameInput').value;
     if (!user) return alert("Enter a username!");
 
-    const res = await fetch(`http://127.0.0.1:8000/analyze/${user}`);
+    const res = await fetch(`https://instagram-backend.onrender.com/analyze/${user}`);
     const data = await res.json();
 
     document.getElementById('landingPage').classList.add('hidden');
@@ -84,4 +84,5 @@ function card(t, v, i) {
         <div class="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-xl shadow-inner">${i}</div>
         <div><p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">${t}</p><p class="text-xl font-black text-slate-800">${v}</p></div>
     </div>`;
+
 }
